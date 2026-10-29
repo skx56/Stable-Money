@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Stable Money — FinTech GTM Strategy &amp; Market Entry</title>
+<style>
+  @page { size: 13.333in 7.5in; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: #1a1612;
+    color: #1a1612;
+    font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .slide {
+    width: 13.333in;
+    height: 7.5in;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    break-after: page;
+    background: #f4efe6;
+    color: #1a1612;
+  }
+  .slide:last-child { page-break-after: auto; }
+
+  /* tokens */
+  .ink { color: #1a1612; }
+  .bronze { color: #685337; }
+  .gold { color: #a49475; }
+  .muted { color: #6d6256; }
+  .faint { color: #8a7d6e; }
+
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #685337;
+  }
+  h1.slide-title {
+    font-size: 34px;
+    line-height: 1.08;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: #1a1612;
+  }
+  .lede {
+    font-size: 15.5px;
+    line-height: 1.45;
+    color: #3c342c;
+    font-weight: 500;
+  }
+  .foot {
+    position: absolute;
+    left: 0.52in;
+    right: 0.52in;
+    bottom: 0.28in;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8a7d6e;
+    font-weight: 600;
+  }
+  .foot b { color: #685337; font-weight: 650; }
+  sup.src {
+    font-size: 8px;
+    font-weight: 700;
+    color: #685337;
+    margin-left: 1px;
+    letter-spacing: 0;
+  }
+
+  /* COVER */
+  .cover {
+    background: #f4efe6;
+    padding: 0.62in 0.7in 0.5in;
+    display: flex;
+    flex-direction: column;
+  }
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    font-size: 18px;
+  }
+  .mark-sq {
+    width: 28px; height: 28px;
+    background: #1a1612;
+    border-radius: 7px;
+    display: grid; place-items: center;
+  }
+  .cover-meta {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #685337;
+    font-weight: 600;
+  }
+  .cover-rule {
+    height: 1px;
+    background: linear-gradient(90deg, #685337, #a49475 40%, transparent);
+    margin: 0.42in 0 0.38in;
+    border: 0;
+  }
+  .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #685337;
+    font-weight: 650;
+    margin-bottom: 16px;
+  }
+  .cover h1 {
+    font-size: 68px;
+    line-height: 0.92;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    max-width: 10.2in;
+  }
+  .cover h1 em {
+    font-style: normal;
+    color: #685337;
+  }
+  .cover-sub {
+    margin-top: 22px;
+    font-size: 20px;
+    line-height: 1.35;
+    max-width: 8.4in;
+    color: #3c342c;
+    font-weight: 500;
+  }
+  .cover-bottom {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 18px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(104,83,55,0.28);
+  }
+  .stat .n {
+    font-size: 22px;
+    font-weight: 650;
+    letter-spacing: -0.03em;
+    color: #1a1612;
+  }
+  .stat .l {
+    margin-top: 3px;
+    font-size: 11.5px;
+    line-height: 1.3;
+    color: #6d6256;
+    font-weight: 500;
+  }
+
+  /* interior layout */
+  .pad {
+    padding: 0.42in 0.55in 0.58in;
+    height: 100%;
+  }
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 0.22in;
+  }
+  .head .right {
+    font-size: 12px;
+    color: #6d6256;
+    text-align: right;
+    max-width: 3.6in;
+    line-height: 1.35;
+    font-weight: 500;
+  }
+
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid-13 { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 14px; }
+  .grid-31 { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 14px; }
+
+  .card {
+    background: #fbf8f2;
+    border: 1px solid rgba(104,83,55,0.16);
+    border-radius: 12px;
+    padding: 14px 15px 13px;
+  }
+  .card.dark {
+    background: #1a1612;
+    color: #f4efe6;
+    border-color: #1a1612;
+  }
+  .card.dark .k { color: #c4b69a; }
+  .card.dark p, .card.dark li { color: #e7dfd2; }
+  .card.bronze {
+    background: #685337;
+    color: #f7f1e6;
+    border-color: #685337;
+  }
+  .card.bronze .k { color: #e7d3a8; }
+  .card h3, .card .k {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #685337;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .card .big {
+    font-size: 26px;
+    font-weight: 650;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .card p, .card li {
+    font-size: 12.5px;
+    line-height: 1.38;
+    color: #3c342c;
+    font-weight: 500;
+  }
+  .card ul { padding-left: 0; list-style: none; }
+  .card li { margin: 0 0 5px; padding-left: 11px; position: relative; }
+  .card li:before {
+    content: "";
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: #a49475;
+    position: absolute;
+    left: 0; top: 6px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  th {
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #685337;
+    font-weight: 700;
+    padding: 0 8px 7px 0;
+    border-bottom: 1.5px solid #685337;
+  }
+  td {
+    padding: 9px 10px 9px 0;
+    border-bottom: 1px solid rgba(104,83,55,0.16);
+    vertical-align: top;
+    line-height: 1.35;
+    font-weight: 500;
+    color: #2a241e;
+  }
+  table.roomy td { padding: 14px 12px 14px 0; font-size: 13px; line-height: 1.38; }
+  table.roomy th { padding-bottom: 10px; }
+  .stretch { min-height: 4.85in; align-items: stretch; }
+  .stack { display: flex; flex-direction: column; gap: 10px; height: 100%; }
+  .stack > .card { flex: 1; }
+  .ladder.tall { height: 100%; }
+  .ladder.tall .rung { flex: 1; }
+  .risks .card { min-height: 2.05in; }
+  .read-top { min-height: 2.55in; align-items: stretch; }
+  .read-top > .card, .read-top > .stack { height: auto; }
+  td:first-child { font-weight: 650; color: #1a1612; width: 1.7in; }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .step {
+    background: #fbf8f2;
+    border: 1px solid rgba(104,83,55,0.16);
+    border-radius: 12px;
+    padding: 12px 12px 13px;
+    min-height: 1.7in;
+  }
+  .step .num {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    font-weight: 700;
+    color: #a49475;
+    margin-bottom: 8px;
+  }
+  .step h3 { font-size: 15px; font-weight: 650; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .step p { font-size: 12px; line-height: 1.35; color: #4a4036; font-weight: 500; }
+
+  .note {
+    margin-top: 12px;
+    background: #1a1612;
+    color: #f4efe6;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: grid;
+    grid-template-columns: 1.3in 1fr;
+    gap: 14px;
+    align-items: center;
+  }
+  .note .k {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #e7d3a8;
+    font-weight: 700;
+  }
+  .note p { font-size: 13px; line-height: 1.4; font-weight: 500; color: #f4efe6; }
+
+  .ladder { display: flex; flex-direction: column; gap: 8px; }
+  .rung {
+    display: grid;
+    grid-template-columns: 0.42in 1fr;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .rung .bar {
+    border-radius: 8px;
+    background: #685337;
+  }
+  .rung:nth-child(1) .bar { background: #2c241c; }
+  .rung:nth-child(2) .bar { background: #685337; }
+  .rung:nth-child(3) .bar { background: #8d7352; }
+  .rung:nth-child(4) .bar { background: #a49475; }
+  .rung:nth-child(5) .bar { background: #c4b69a; }
+  .rung .body {
+    background: #fbf8f2;
+    border: 1px solid rgba(104,83,55,0.14);
+    border-radius: 10px;
+    padding: 8px 12px;
+  }
+  .rung h3 { font-size: 13.5px; font-weight: 650; }
+  .rung p { font-size: 12px; color: #4a4036; font-weight: 500; margin-top: 1px; }
+
+  .axis {
+    position: relative;
+    height: 4.55in;
+    border-left: 1.5px solid #685337;
+    border-bottom: 1.5px solid #685337;
+    margin: 8px 28px 22px 36px;
+  }
+  .axis .ylab, .axis .xlab {
+    position: absolute;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #685337;
+  }
+  .axis .ylab { left: -28px; top: 38%; transform: rotate(-90deg); transform-origin: left center; white-space: nowrap; }
+  .axis .xlab { bottom: -20px; left: 0; right: 0; text-align: center; }
+  .dot {
+    position: absolute;
+    transform: translate(-50%, 50%);
+    background: #fbf8f2;
+    border: 1.5px solid #685337;
+    border-radius: 9px;
+    padding: 5px 8px 4px;
+    font-size: 11px;
+    font-weight: 650;
+    line-height: 1.15;
+    width: 1.48in;
+    box-shadow: 0 1px 0 rgba(26,22,18,0.04);
+  }
+  .dot small { display: block; font-weight: 550; color: #6d6256; font-size: 10px; letter-spacing: 0; }
+  .dot.us {
+    background: #1a1612;
+    color: #f4efe6;
+    border-color: #1a1612;
+  }
+  .dot.us small { color: #e7d3a8; }
+
+  .tl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+  .tl:before {
+    content: "";
+    position: absolute;
+    left: 8px; right: 8px; top: 7px;
+    height: 2px;
+    background: linear-gradient(90deg, #a49475, #685337);
+  }
+  .tl .ev { padding-right: 12px; }
+  .tl .ev .y {
+    font-size: 12px;
+    font-weight: 700;
+    color: #685337;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 0;
+  }
+  .tl .ev .y:before {
+    content: "";
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #685337;
+    border: 2px solid #f4efe6;
+    margin-right: 6px;
+    position: relative;
+    top: 1px;
+  }
+  .tl h3 { font-size: 13.5px; font-weight: 650; margin-bottom: 4px; letter-spacing: -0.01em; }
+  .tl p { font-size: 12px; line-height: 1.35; color: #4a4036; font-weight: 500; }
+
+  .src-list { columns: 2; column-gap: 28px; }
+  .src-list li {
+    break-inside: avoid;
+    font-size: 12px;
+    line-height: 1.35;
+    color: #3c342c;
+    font-weight: 500;
+    margin-bottom: 8px;
+    list-style: none;
+    padding-left: 18px;
+    position: relative;
+  }
+  .src-list li span.n {
+    position: absolute;
+    left: 0; top: 0;
+    color: #685337;
+    font-weight: 700;
+    font-size: 11px;
+  }
+
+  .pillrow { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .pill {
+    font-size: 11px;
+    font-weight: 650;
+    background: #f4efe6;
+    border: 1px solid rgba(104,83,55,0.25);
+    color: #3c342c;
+    border-radius: 999px;
+    padding: 3px 8px;
+  }
+  .two-col-text p { font-size: 13.5px; line-height: 1.42; color: #3c342c; font-weight: 500; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<!-- 01 COVER -->
+<section class="slide cover">
+  <div class="cover-top">
+    <div class="mark">
+      <div class="mark-sq"><svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.6 7.2 L14.2 1.6 L8.2 14.4 L6.7 9.1 Z" fill="#e7d3a8"/></svg></div>
+      stable money
+    </div>
+    <div class="cover-meta">Independent case study · October 2026</div>
+  </div>
+  <hr class="cover-rule" />
+  <div class="eyebrow">FinTech · Go-to-market · Market entry</div>
+  <h1>Don’t fight the<br>customer. <em>Start where<br>India already saves.</em></h1>
+  <p class="cover-sub">How Stable Money turned the fixed deposit — a product most fintechs treated as boring — into a distribution business, a trust strategy, and a ladder into bonds.</p>
+  <div class="cover-bottom">
+    <div class="stat">
+      <div class="n">60 lakh+</div>
+      <div class="l">Users across 3,500+ cities, as stated on the company site<sup class="src">1</sup></div>
+    </div>
+    <div class="stat">
+      <div class="n">₹9,761 cr</div>
+      <div class="l">Total FD investments on the homepage counter, 9 Oct 2026<sup class="src">1</sup></div>
+    </div>
+    <div class="stat">
+      <div class="n">$175 mn</div>
+      <div class="l">Valuation at the Feb 2026 pre-Series C, led by Peak XV<sup class="src">3</sup></div>
+    </div>
+    <div class="stat">
+      <div class="n">Up to 8.50%</div>
+      <div class="l">Highest partner FD rate on the live shelf that day<sup class="src">1</sup></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 ARGUMENT -->
+<section class="slide">
+  <div class="pad">
+    <div class="head">
+      <div>
+        <div class="kicker">01 — The argument</div>
+        <h1 class="slide-title" style="margin-top:8px;">A case about category choice,<br>not about a higher rate.</h1>
+      </div>
+    </div>
+    <div class="grid-13">
+      <div>
+        <p class="lede" style="margin-bottom:12px;">Most Indian fintech of the last decade tried to pull savers into equities and mutual funds. Stable Money, founded in 2022 in Bengaluru by Saurabh Jain and Harish Reddy, started from the opposite observation: the country already had a savings product it understood.</p>
+        <div class="card" style="margin-bottom:10px;">
+          <div class="k">Founder thesis</div>
+          <p>“If you want financialisation, the route was not to get people directly into mutual funds or stocks. It is very important to honour the beliefs of the customers.” Jain’s own family invested in FDs. The gap he saw was not awareness. It was that booking a better FD was still a branch problem.<sup class="src">4</sup></p>
+        </div>
+        <div class="card dark">
+          <div class="k">What this case examines</div>
+          <p>How the product actually works, who pays, how the company acquires and keeps a cautious saver, where it sits against banks and bond apps, and which constraints — insurance, take-rate, the rate cycle — decide whether the strategy compounds.</p>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div class="card bronze">
+          <div class="k">Four strategic choices</div>
+          <ul>
+            <li>Own fixed income. Do not become an equity app.</li>
+            <li>Borrow trust from banks and DICGC. Educate after the first FD, not before.</li>
+            <li>Win tier-2 India with an app, then add a person where a screen is not enough.</li>
+            <li>Walk the same customer one step up: FD, then bonds, then only what still feels stable.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="k">Who built it</div>
+          <p>Jain is an IIT Bombay graduate. He scaled cities at Swiggy, then helped build Navi’s mutual-fund business with Sachin Bansal. Reddy came from the brokerage Estee. The operating company is Stable-Alpha Technologies Pvt. Ltd.<sup class="src">4,7</sup></p>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span><b>Stable Money</b> · Case study</span><span>02</span></div>
+  </div>
+</section>
+
+<!-- 03 SNAPSHOT -->
+<section class="slide">
+  <div class="pad">
+    <div class="head">
+      <div>
+        <div class="kicker">02 — The company</div>
+        <h1 class="slide-title" style="margin-top:8px;">A fixed-income shelf, not a bank.</h1>
+      </div>
+      <div class="right">FDs went live in August 2023. Two years later the company was already describing itself as a trust business that had found its pace.<sup class="src">2</sup></div>
+    </div>
+    <div class="grid-4" style="margin-bottom:12px;">
+      <div class="card">
+        <div class="k">What it is</div>
+        <p>A marketplace to compare and book fixed deposits and recurring deposits, plus bonds and an FD-backed card. The customer does not open a new savings account.</p>
+      </div>
+      <div class="card">
+        <div class="k">What it is not</div>
+        <p>It does not hold or pool money. The customer pays the chosen bank or NBFC. The deposit is issued in the customer’s name.<sup class="src">1</sup></p>
+      </div>
+      <div class="card">
+        <div class="k">Who it serves</div>
+        <p>Median age 28. About 60% of users are in tier-2 cities. Seniors are a small share of customers and a large share of assets.<sup class="src">2,4</sup></p>
+      </div>
+      <div class="card">
+        <div class="k">How it gets paid</div>
+        <p>Sourcing commissions from bank and NBFC partners. Jain has described a blended margin of about 0.6% on assets.<sup class="src">6</sup></p>
+      </div>
+    </div>
+    <table class="roomy">
+      <thead>
+        <tr><th>Marker</th><th>Figure</th><th>When, and what it actually measures</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>AUM</td><td>₹4,000 crore · 1.25 lakh deposits</td><td>December 2025. Outstanding assets, per the founder. Target then: triple AUM by end-2026.<sup class="src">2</sup></td></tr>
+        <tr><td>Facilitated</td><td>₹5,000 crore+ · 4 million investors</td><td>February 2026. Investments facilitated across FDs, bonds and related products.<sup class="src">3</sup></td></tr>
+        <tr><td>Homepage</td><td>₹9,761 crore · 60 lakh+ users</td><td>9 October 2026. “Total FD investments,” a running bookings counter — not the same as AUM. A new FD every ~60 seconds. Cities: 3,500+.<sup class="src">1</sup></td></tr>
+        <tr><td>FY25</td><td>₹104 crore revenue · ₹45 crore loss</td><td>Operating revenue and loss, as cited from Tracxn. EBITDA loss also ₹45 crore. Still in a growth-over-profit phase.<sup class="src">3</sup></td></tr>
+      </tbody>
+    </table>
+    <div class="foot"><span><b>Stable Money</b> · Read the counters as different metrics</span><span>03</span></div>
+  </div>
+</section>
+
+<!-- 04 MARKET -->
+<section class="slide">
+  <div class="pad">
+    <div class="head">
+      <div>
+        <div class="kicker">03 — The market they entered</div>
+        <h1 class="slide-title" style="margin-top:8px;">A huge, trusted, badly distributed product.</h1>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-bottom:12px;">
+      <div class="card dark">
+        <div class="big">18–23 cr</div>
+        <div class="k">Indians already in FDs</div>
+        <p>Jain has put the figure above 18 crore. The company has also cited over 23 crore. Either way, this is the default savings instrument, and FD stock has been growing near 12% a year.<sup class="src">4,6</sup></p>
+      </div>
+      <div class="card">
+        <div class="big">~150–300 bps</div>
+        <div class="k">The rate gap that sells</div>
+        <p>Small finance banks pay a premium because they lack the cheap current-account float of SBI or HDFC. On 9 Oct 2026 the shelf topped out at 8.50%. Large-bank retail FDs have sat nearer the mid-6s.<sup class="src">1,2</sup></p>
+      </div>
+      <div class="card">
+        <div class="big">₹5 lakh</div>
+        <div class="k">The insurance that travels</div>
+        <p>DICGC, owned by the RBI, covers principal plus interest up to ₹5 lakh per depositor, per bank. A bank FD booked in the app is the bank’s FD. An NBFC FD is not covered.<sup class="src">1</sup></p>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="k">Why the window opened</div>
+        <ul>
+          <li>A high-rate cycle made the “boring” product visibly better than a savings account.</li>
+          <li>eKYC, UPI and video KYC removed the branch visit and the new-account requirement.</li>
+          <li>After an equity-first decade, a slice of younger savers wanted predictability more than a dashboard.<sup class="src">2</sup></li>
+          <li>SFBs and NBFCs needed deposits and would pay for digital distribution they could not build city by city.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="k">The whitespace</div>
+        <p style="margin-bottom:8px;">Groww, Zerodha and bank apps could all show an FD. Almost none of them were willing to be about FDs. Stable Money took the unfashionable job: one place to see the rates, book without a new relationship, and track deposits that used to live in five passbooks.</p>
+        <p>For the lender, the app is a deposit-gathering channel. For the saver, it is a comparison and a convenience layer. The yield is the bank’s. The product is the distribution.<sup class="src">2,7</sup></p>
+      </div>
+    </div>
+    <div class="foot"><span><b>Stable Money</b> · Market entry</span><span>04</span></div>
+  </div>
+</section>
+
+<!-- 05 HOW IT WORKS -->
+<section class="slide">
+  <div class="pad">
+    <div class="head">
+      <div>
+        <div class="kicker">04 — How the product works</div>
+        <h1 class="slide-title" style="margin-top:8px;">Five steps. The money never sits with the app.</h1>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Compare</h3>
+        <p>One screen of live FD rates across banks and NBFCs. Tenure, payout and features sit next to the headline yield.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Choose</h3>
+        <p>The customer picks a partner and a job: highest rate, a one-year lock, monthly income, or instant liquidity.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>KYC with the bank</h3>
+        <p>Identity is completed with the institution that will issue the deposit. No new savings account is required.</p>
+      </div>
+      <div class="step">
+        <div class="num">04</div>
+        <h3>Pay the bank</h3>
+        <p>Funds move from the customer’s existing account to the bank or NBFC. Stable Money does not custody the principal.</p>
+      </div>
+      <div class="step">
+        <div class="num">05</div>
+        <h3>Track and exit</h3>
+        <p>The receipt, renewal and withdrawal live in the app. At maturity, money returns to the customer’s own account.</p>
+      </div>
+    </div>
+    <div class="note">
+      <div class="k">The five promises on the site</div>
+      <p>Insured · Regulated · Direct · Convenient · Human. Bank deposits carry DICGC cover. Every partner is an RBI-licensed bank or NBFC. A person answers, in the customer’s language — 43,000+ questions and 1,17,000+ minutes of walk-throughs, by the company’s count.<sup class="src">1</sup></p>
+    </div>
+    <div class="card" style="margin-top:10px;">
+      <div class="k">Shelf on 9 October 2026 — highest rate shown per partner</div>
+      <div class="pillrow">
+        <span class="pill">Unity SFB 8.50%</span>
+        <span class="pill">Suryoday SFB 8.50%</span>
+        <span class="pill">Ujjivan SFB 8.30%</span>
+        <span class="pill">Utkarsh SFB 8.25%</span>
+        <span class="pill">Shivalik SFB 8.25%</span>
+        <span class="pill">Bajaj Finance 8.15%</span>
+        <span class="pill">Shriram Finance 8.00%</span>
+        <span class="pill">AU SFB 7.90%</span>
+        <span class="pill">+ IndusInd, RBL, slice, Mahindra, SIB, IOB</span>
+      </div>
+    </div>
+    <div class="foot"><span><b>Stable Money</b> · Rates move. NBFC FDs are not DICGC-insured.</span><span>05</span></div>
+  </div>
+</section>
+
+<!-- 06 LADDER -->
+<section class="slide">
+  <div class="pad">
+    <div class="head">
+      <div>
+        <div class="kicker">05 — Product strategy</div>
+        <h1 class="slide-title" style="margin-top:8px;">A ladder that stays inside “stable.”</h1>
+      </div>
+      <div class="right">The company has been explicit: no equity products in the near term. REITs are under review because they still fit the promise.<sup class="src">3</sup></div>
+    </div>
+    <div class="grid-31 stretch">
+      <div class="ladder tall">
+        <div class="rung"><div class="bar"></div><div class="body"><h3>FD — the habit</h3><p>Core product. Bank and NBFC deposits. This is the first transaction and the brand.</p></div></div>
+        <div class="rung"><div class="bar"></div><div class="body"><h3>RD — the salary saver</h3><p>Same rails, monthly. Matches how a 28-year-old actually earns.</p></div></div>
+        <div class="rung"><div class="bar"></div><div class="body"><h3>Bonds — one step up</h3><p>Stable Bonds, through SEBI-registered broker Stable Broking. Sold as +2–3% over an FD, not as a market product.<sup class="src">2,8</sup></p></div></div>
+        <div class="rung"><div class="bar"></div><div class="body"><h3>Gold and silver via mutual funds</h3><p>Not digital gold. A regulated version of an allocation customers already make in their heads.<sup class="src">2</sup></p></div></div>
+        <div class="rung"><div class="bar"></div><div class="body"><h3>FD-backed card · REITs later</h3><p>A secured card so credit sits on top of a deposit. REITs evaluated; equities declined.<sup class="src">3,8</sup></p></div></div>
+      </div>
+      <div class="stack">
+        <div class="card">
+          <div class="k">They do not all chase the rate</div>
+          <p>Only about 40% of FDs go into the highest-interest product. Many customers arrive with a tenure or a liquidity need and optimise for that. The acquisition hook is the rate. The catalogue has to serve the constraint.<sup class="src">2</sup></p>
+        </div>
+        <div class="card">
+          <div class="k">The bond attach is the strategy working</div>
+          <p>By December 2025, 23% of FD customers had also bought bonds. By April 2026, 26% of people who started with an FD had gone on to bonds, and 81% of bond investors on the platform were first-time bond buyers.<sup class="src">2,4</sup></p>
+        </div>
+        <div class="card bronze">
+          <div class="k">The bet</div>
+          <p>India’s retail bond market will not be built by equity investors climbing down the risk curve. It will be built by FD customers climbing one step up — and only after they have already transacted.</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span><b>Stable Money</b> · Product ladder</span><span>06</span></div>
+  </div>
+</section>
+
+<!-- 07 BUSINESS MODEL -->
+<section class="slide">
+  <div class="pad">
+    <div class="head">
+      <div>
+        <div class="kicker">06 — Business model</div>
+        <h1 class="slide-title" style="margin-top:8px;">A thin fee on a very large, sticky stock.</h1>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-bottom:12px;">
+      <div class="card">
+        <div class="k">Demand side · the saver</div>
+        <p>Pays nothing extra for distribution. Gets a higher rate than a large-bank FD, one login for many deposits, and an exit back to their own account. Switching cost is low at first booking and higher once several FDs, an RD and a bond sit in the same app.</p>
+      </div>
+      <div class="card">
+        <div class="k">Supply side · the lender</div>
+        <p>SFBs and deposit-taking NBFCs need retail liabilities and cannot match SBI’s branch grid. They pay a sourcing commission for customers who would never have walked into their branch. Early on, that commission was the whole model. Volume is what improves it.<sup class="src">7</sup></p>
+      </div>
+      <div class="card dark">
+        <div class="k">Unit economics, as stated</div>
+        <p>About 0.6% blended margin on assets under management. Revenue therefore follows the stock of deposits, renewals included, not just new bookings. Management’s profit target: end of FY27. Until then, assets and users come first.<sup class="src">2,6</sup></p>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="k">Why FY25 still lost money</div>
+        <p>Reported operating revenue of ₹104 crore against a ₹45 crore loss. That is what a sub-1% take-rate looks like while the company is still buying trust: brand, people on the phone, city teams, and bank integrations. Jain’s line in late 2025 was that the first meaningful asset base took 14 months, and the company was by then adding a similar amount in about a month. Scale is the plan for the margin to matter.<sup class="src">2,3</sup></p>
+      </div>
+      <div class="card">
+        <div class="k">What has to stay true</div>
+        <ul>
+          <li>Partners keep paying for deposits, which they will only while their own branch cost is higher.</li>
+          <li>Customers renew. A one-time booking at 0.6% does not build a firm.</li>
+          <li>The bond step-up carries a better fee than a plain bank FD, without breaking the safety story.</li>
+          <li>Support costs per account fall as the base compounds. The 24×7 human promise is a cost centre on purpose.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot"><span><b>Stable Money</b> · Economics</span><span>07</span></div>
+  </div>
+</section>
+
+<!-- 08 GTM -->
+<section class="slide">
+  <div class="pad">
+    <div class="head">
+      <div>
+        <div class="kicker">07 — Go-to-market</div>
+        <h1 class="slide-title" style="margin-top:8px;">Trust first. Geography second. Education third.</h1>
+      </div>
+    </div>
+    <div class="grid-4" style="margin-bottom:12px;">
+      <div class="card">
+        <div class="k">01 · Enter the belief</div>
+        <p>Do not ask a first-time serious investor to learn markets. Ask them to book the FD they already believe in, at a better rate, from the phone.</p>
+      </div>
+      <div class="card">
+        <div class="k">02 · Transact, then teach</div>
+        <p>The first completed FD is the education. After that, the same person will listen to a bond. Before that, a curriculum loses to a cousin’s advice.<sup class="src">4</sup></p>
+      </div>
+      <div class="card">
+        <div class="k">03 · Acquire on rate</div>
+        <p>The ad is 8% versus a large bank’s mid-6s. The product then has to satisfy the 60% who do not take the top rate.</p>
+      </div>
+      <div class="card">
+        <div class="k">04 · Let families sell</div>
+        <p>About 20% of customers arrive by referral. In this category the channel is a parent, a spouse, or a WhatsApp group.<sup class="src">4</sup></p>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="card bronze">
+        <div class="k">Who the campaign is for</div>
+        <p>Not the retiree the industry assumed, and not the day-trader fintech already owns. Median age 28. Around 60% tier-2. They know how to earn. They are learning how not to lose it. Older users are often brought in by their children — and they bring the balances.<sup class="src">2,4</sup></p>
+      </div>
+      <div class="card">
+        <div class="k">Mass trust, not fintech cool</div>
+        <p>The app listing ties the brand to Kaun Banega Crorepati: a quiz inside the app, a path to the hot seat, audience passes. That is a Bharat media buy. It borrows the most trusted half-hour on Indian television, which is the same move as borrowing DICGC.<sup class="src">8</sup></p>
+      </div>
+      <div class="card">
+        <div class="k">A person, when the app stalls</div>
+        <p>Digital covers 3,500+ cities. It does not close everyone. A Kolkata pilot put a small team in front of customers, in a city with a fixed-income culture. Delhi and Pune followed. The pre-Series C is partly for more of this.<sup class="src">2,3</sup></p>
+      </div>
+    </div>
+    <div class="foot"><span><b>Stable Money</b> · GTM system</span><span>08</span></div>
+  </div>
+</section>
+
+<!-- 09 MARKET MANAGEMENT -->
+<section class="slide">
+  <div class="pad">
+    <div class="head">
+      <div>
+        <div class="kicker">08 — Managing the market</div>
+        <h1 class="slide-title" style="margin-top:8px;">Run both sides, and refuse the rest.</h1>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-bottom:12px;">
+      <div class="card">
+        <div class="k">Supply management</div>
+        <ul>
+          <li>Curate a bookable set — the site leads with 11 banks and 3 NBFCs — and show a wider comparison shelf so the app is the place rates are checked, even before a booking.<sup class="src">1</sup></li>
+          <li>Mix SFBs (the yield) with a few familiar private and public banks (the comfort). IndusInd, RBL, South Indian Bank and Indian Overseas Bank sit on the same ticker as Unity and Suryoday.</li>
+          <li>Negotiate the features that are not the rate: instant withdrawal, penalty-free exits on select deposits, monthly payout. Those are how 60% of bookers choose.<sup class="src">2</sup></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="k">Demand management</div>
+        <ul>
+          <li>Keep the promise narrow. “You don’t want to be everything for a customer.” Depth in fixed income beats a wealth supermarket.<sup class="src">4</sup></li>
+          <li>Use the FD as a qualification. Bonds are offered to people who have already trusted the app with a deposit.</li>
+          <li>Spend human time on the first FD, the renewal and the withdrawal. That is the retention system, not a helpdesk afterthought.<sup class="src">1</sup></li>
+          <li>Growth stays organic. Management has ruled out acquisitions for the near term.<sup class="src">3</sup></li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="card dark">
+        <div class="k">Pace</div>
+        <p>Fourteen months to a first real asset base. Then, by Jain’s account, that same increment in roughly a month. The GTM bet is that trust compounds faster than ad spend once the first cohort renews.<sup class="src">2</sup></p>
+      </div>
+      <div class="card">
+        <div class="k">The 2026 asset target</div>
+        <p>From ₹4,000 crore AUM in December 2025, the stated goal was a threefold increase by the end of 2026. That is an outstanding-asset target. The homepage’s ₹9,761 crore is cumulative FD bookings. They can both be true.<sup class="src">1,2</sup></p>
+      </div>
+      <div class="card">
+        <div class="k">The loud ambition</div>
+        <p>Jain has also spoken of aiming, over a couple of years, at ₹30,000 crore of FDs a month. Treat that as direction, not a forecast. It is several times the stock the company has gathered so far.<sup class="src">6</sup></p>
+      </div>
+    </div>
+    <div class="foot"><span><b>Stable Money</b> · Market management</span><span>09</span></div>
+  </div>
+</section>
+
+<!-- 10 COMPETITION -->
+<section class="slide">
+  <div class="pad">
+    <div class="head">
+      <div>
+        <div class="kicker">09 — Competition</div>
+        <h1 class="slide-title" style="margin-top:8px;">Everyone can list an FD. Few can be about one.</h1>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:1.85in;">Player</th>
+          <th>Wedge</th>
+          <th>How they compete with Stable Money</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Large banks</td>
+          <td>Balance sheet and branch</td>
+          <td>SBI and HDFC win on brand and salary accounts, at a lower rate. Stable Money does not try to be them. It routes money to lenders who pay up for the same saver.</td>
+        </tr>
+        <tr>
+          <td>SFB’s own app</td>
+          <td>The rate, direct</td>
+          <td>Unity or Suryoday can offer the same FD without a middleman. They cannot offer eleven of themselves. The saver will not open five bank relationships to shop.</td>
+        </tr>
+        <tr>
+          <td>super.money</td>
+          <td>UPI habit, Flipkart</td>
+          <td>superFD sits inside a payments app, with a very low ticket. Distribution is the threat: they already have the daily open. FD is a feature, not the company.<sup class="src">2</sup></td>
+        </tr>
+        <tr>
+          <td>CRED</td>
+          <td>Affluent card users</td>
+          <td>Same “make FDs feel modern” move, aimed at a premium urban base. Weak overlap with a tier-2, age-28 saver.<sup class="src">2</sup></td>
+        </tr>
+        <tr>
+          <td>Wint, Jiraaf, Grip, InCred</td>
+          <td>Bonds and credit yield</td>
+          <td>Bonds-first. Higher stated returns, issuer risk, hold-to-maturity. They compete for the second product, not the first. Stable Money wants that customer to arrive via an FD.<sup class="src">3</sup></td>
+        </tr>
+        <tr>
+          <td>Groww, Zerodha, INDmoney</td>
+          <td>Full-stack wealth</td>
+          <td>An FD tab inside an equity brand. Useful, and not the reason anyone downloaded the app. Dangerous only if they decide fixed income is worth a brand of its own.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note" style="margin-top:14px;">
+      <div class="k">The real contest</div>
+      <p>Anyone can publish today’s highest rate. The fight is for the second booking: the renewal, the parent’s account, and the first bond. super.money threatens the first open. Bond platforms threaten the second product. Large banks threaten neither, as long as their rate stays a point and a half behind.</p>
+    </div>
+    <div class="foot"><span><b>Stable Money</b> · Competitive set</span><span>10</span></div>
+  </div>
+</section>
+
+<!-- 11 POSITIONING -->
+<section class="slide">
+  <div class="pad">
+    <div class="head">
+      <div>
+        <div class="kicker">10 — Position</div>
+        <h1 class="slide-title" style="margin-top:8px;">Depth on the safe side of the map.</h1>
+      </div>
+      <div class="right" style="max-width:3.2in;">Vertical axis is felt safety. Horizontal axis is how wide the app is trying to be.</div>
+    </div>
+    <div class="grid-13">
+      <div class="axis" style="height:4.35in; margin-top:0;">
+        <div class="ylab">Higher felt safety</div>
+        <div class="xlab">Narrow fixed income &nbsp;&nbsp;→&nbsp;&nbsp; Broad super-app</div>
+        <div class="dot" style="left:24%; bottom:84%;">Large banks<small>Own FD, lower rate</small></div>
+        <div class="dot us" style="left:40%; bottom:62%;">Stable Money<small>FD-native, then one step up</small></div>
+        <div class="dot" style="left:26%; bottom:26%;">Wint / Jiraaf / Grip<small>Bonds-native, credit yield</small></div>
+        <div class="dot" style="left:70%; bottom:80%;">CRED<small>FD inside a premium app</small></div>
+        <div class="dot" style="left:76%; bottom:46%;">super.money<small>FD inside payments</small></div>
+        <div class="dot" style="left:54%; bottom:18%;">Groww / Zerodha<small>FD tab, equity brand</small></div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div class="card">
+          <div class="k">Where they win</div>
+          <p>The customer who wants a bank FD, wants a better rate than the salary account, and does not want a new worldview. Aggregation is the product. Regulation is the marketing.</p>
+        </div>
+        <div class="card">
+          <div class="k">Where they don’t</div>
+          <p>Anyone maximising yield will prefer a bond platform. Anyone already inside Groww will not switch apps for a 7% deposit. Anyone who needs a branch manager’s face still needs the Kolkata model, which does not scale like software.</p>
+        </div>
+        <div class="card dark">
+          <div class="k">The moat, if it exists</div>
+          <p>Not the rate — partners can show that themselves. The moat is the renewed book, the family’s second account, and the right to offer the next stable product without starting trust over.</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span><b>Stable Money</b> · Positioning</span><span>11</span></div>
+  </div>
+</section>
+
+<!-- 12 CAPITAL -->
+<section class="slide">
+  <div class="pad">
+    <div class="head">
+      <div>
+        <div class="kicker">11 — Capital and traction</div>
+        <h1 class="slide-title" style="margin-top:8px;">Four rounds to $65 million. Profit is scheduled, not booked.</h1>
+      </div>
+    </div>
+    <div class="tl" style="margin-bottom:16px;">
+      <div class="ev">
+        <div class="y">2022</div>
+        <h3>Founded</h3>
+        <p>Jain and Reddy. First equity round of about $5 million led by Matrix (now Z47) and Lightspeed. Thesis already fixed: FDs first, then bonds.<sup class="src">7</sup></p>
+      </div>
+      <div class="ev">
+        <div class="y">2023 – 25</div>
+        <h3>FDs, then bonds</h3>
+        <p>Deposits from August 2023. Bonds roughly fourteen months before December 2025. Series B of $20 million at a $130 million valuation; Fundamentum, Z47, RTP, Lightspeed, Aditya Birla Ventures.<sup class="src">2,3</sup></p>
+      </div>
+      <div class="ev">
+        <div class="y">Feb 2026</div>
+        <h3>Pre-Series C</h3>
+        <p>$25 million, Peak XV putting in $20 million. Z47, RTP and Fundamentum follow. Valuation $175 million. Total capital: $65 million.<sup class="src">3</sup></p>
+      </div>
+      <div class="ev">
+        <div class="y">Use of funds</div>
+        <h3>Bharat, not M&amp;A</h3>
+        <p>Tier-2 and tier-3 marketing, more offline points, tech and business hiring. Series B cash was not fully spent. IPO talked about as a 3-to-5-year outcome.<sup class="src">3</sup></p>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="k">Cap table after the pre-Series C</div>
+        <p>Entrackr’s read of the allotment: each founder 15.35% (together about 30%, down from 36.7% after the prior round). Z47 17.9%, Lightspeed 13.04%, RTP Global 12.7%, Peak XV 11.43%. Peak XV’s cheque was about ₹183.5 crore. Names the website itself puts on the “backed by” line include Kunal Bahl, Nandan Nilekani and Sriharsha Majety.<sup class="src">1,3,5</sup></p>
+      </div>
+      <div class="card">
+        <div class="k">What the capital is really buying</div>
+        <p>Time. If the stated 0.6% is an annual earning rate, ₹4,000 crore of AUM is only about ₹24 crore a year — yet FY25 revenue was ₹104 crore. The P&amp;L is already wider than a plain FD commission on that stock: bonds, a book that grew through the year, and however “margin” is defined. The raise covers the distance from there to a FY27 profit, while offline distribution is still a pilot.<sup class="src">3,6</sup></p>
+      </div>
+    </div>
+    <div class="foot"><span><b>Stable Money</b> · Ownership figures are from press analysis of filings, not a company disclosure</span><span>12</span></div>
+  </div>
+</section>
+
+<!-- 13 RISKS -->
+<section class="slide">
+  <div class="pad">
+    <div class="head">
+      <div>
+        <div class="kicker">12 — What can break it</div>
+        <h1 class="slide-title" style="margin-top:8px;">The strategy is disciplined. The risks are structural.</h1>
+      </div>
+    </div>
+    <div class="grid-3 risks">
+      <div class="card">
+        <div class="k">01 · The rate cycle</div>
+        <p>The advertisement is the gap over SBI. If the RBI easing cycle compresses SFB premiums, acquisition gets quieter just as the brand spend rises. The product still works at 7%. It recruits worse.</p>
+      </div>
+      <div class="card">
+        <div class="k">02 · A 0.6% business</div>
+        <p>Thin take-rates forgive nothing: support, offline teams, and a KBC-scale brand buy all hit the same P&amp;L that lost ₹45 crore in FY25. Missing FY27 profit would mean the compounding-trust story was slower than the burn.</p>
+      </div>
+      <div class="card">
+        <div class="k">03 · “Insured” has a footnote</div>
+        <p>DICGC is ₹5 lakh per bank, principal and interest together, and it does not cover Bajaj, Shriram or Mahindra Finance. The brand leads with insurance. A customer who books the NBFC at the top of the shelf may not have read the footnote.</p>
+      </div>
+      <div class="card">
+        <div class="k">04 · Partner event</div>
+        <p>The FD is the bank’s liability. The memory will be the app’s. One stressed small finance bank becomes a Stable Money headline even when the insurance holds. Reputation is the asset the model is built on.</p>
+      </div>
+      <div class="card">
+        <div class="k">05 · Distribution gets copied</div>
+        <p>super.money already has the daily open. Banks can ship a cleaner own-app. The shelf is not IP. Renewal behaviour and the bond relationship are. Both are slow, and both are contestable.</p>
+      </div>
+      <div class="card">
+        <div class="k">06 · Metric fog</div>
+        <p>AUM, “facilitated investments,” and the homepage bookings counter answer three different questions. A case, or an investor, that treats ₹9,761 crore as money still on the platform will misread the scale.</p>
+      </div>
+    </div>
+    <div class="foot"><span><b>Stable Money</b> · Risks</span><span>13</span></div>
+  </div>
+</section>
+
+<!-- 14 READING -->
+<section class="slide">
+  <div class="pad">
+    <div class="head">
+      <div>
+        <div class="kicker">13 — Reading the case</div>
+        <h1 class="slide-title" style="margin-top:8px;">What to take from it, and what to watch.</h1>
+      </div>
+    </div>
+    <div class="grid-2 read-top" style="margin-bottom:12px;">
+      <div class="card dark" style="padding:18px 20px;">
+        <div class="k">The strategic lesson</div>
+        <p style="font-size:14.5px; line-height:1.42;">Stable Money’s entry strategy is a refusal. It refused the venture default (equities), refused to educate strangers before taking their deposit, and refused to be a super-app. In a market where the customer’s belief is the distribution, the winning product is the one that does not argue with the belief. The fixed deposit was already the brand. The company rented it, made it bookable, and is trying to earn the right to sell the next product in the same sentence.</p>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:10px;">
+          <div class="k">If you only remember four facts</div>
+          <ul>
+            <li>The customer pays the bank. The company is paid by the bank.</li>
+            <li>The user is 28 and often in a tier-2 city. The balance is often older, and referred.</li>
+            <li>Bonds are a step up for FD customers, not a second company.</li>
+            <li>Safety is the marketing, and it is only literally true for bank deposits under ₹5 lakh.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="k">What would confirm or kill the thesis by 2027</div>
+      <div class="grid-4" style="margin-top:4px;">
+        <div>
+          <p><b style="color:#1a1612;">AUM, not the counter.</b> Did outstanding assets actually approach the threefold target, or did bookings run ahead of stock?</p>
+        </div>
+        <div>
+          <p><b style="color:#1a1612;">FY27 profit.</b> Management set the date. A miss means the take-rate cannot yet carry the trust machine.</p>
+        </div>
+        <div>
+          <p><b style="color:#1a1612;">Bond quality.</b> Attach moving past ~26% is good only if the book stays a step up, not a yield chase.</p>
+        </div>
+        <div>
+          <p><b style="color:#1a1612;">Offline payback.</b> Kolkata, Delhi and Pune have to produce deposits cheaper than the next metro ad, or the Bharat plan is a cost.</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span><b>Stable Money</b> · An independent case study. Not investment advice. Not affiliated with the company.</span><span>14</span></div>
+  </div>
+</section>
+
+<!-- 15 SOURCES -->
+<section class="slide">
+  <div class="pad">
+    <div class="head">
+      <div>
+        <div class="kicker">Sources and how to read the numbers</div>
+        <h1 class="slide-title" style="margin-top:8px;">Every figure above is dated on purpose.</h1>
+      </div>
+    </div>
+    <ol class="src-list">
+      <li><span class="n">1</span>Stable Money homepage, stablemoney.in, accessed 9 October 2026. Users, cities, five promises, support counts, partner rates, total FD investments counter (₹97,61,03,80,012), and the “backed by” names.</li>
+      <li><span class="n">2</span>Sayan Sen, “Stable Money aims to triple fixed deposit assets to Rs 12,000 crore by 2026,” YourStory, 24 December 2025. AUM, deposit count, median age, 13% over 60, 40% top-rate share, bond attach, Kolkata pilot, Series B, gold via mutual funds.</li>
+      <li><span class="n">3</span>Agnidev Bhattacharya, “Stable Money raises $25 million led by Peak XV,” Mint, 18 February 2026. Round size, valuation, $65 million total, offline cities, 4 million users, ₹5,000 crore facilitated, FY25 revenue and loss via Tracxn, REITs, no equities, no acquisitions, IPO horizon. Series B valuation as reported there.</li>
+      <li><span class="n">4</span>Debroop Roy, “Don’t fight the customer,” ET Entrepreneur, 15 April 2026. Founder biography and quotes, 18 crore FD holders, 60% tier-2, referral share, 26% bond progression, 81% first-time bond investors.</li>
+      <li><span class="n">5</span>Entrackr, “Stable Money founders’ stake falls to 30% after pre-Series C.” Post-round stakes for the founders, Z47, Lightspeed, RTP and Peak XV, and the rupee split of the round.</li>
+      <li><span class="n">6</span>Moneycontrol, on the Peak XV round. Founder comments: ~0.6% blended margin, profit aimed by end-FY27, ~23 crore FD users, ~12% category growth, and the ₹30,000 crore monthly FD ambition.</li>
+      <li><span class="n">7</span>Early company accounts of the first round (Matrix and Lightspeed, about $5 million) and the commission model: Business Review Live; founder comments on sourcing fees and the decision not to require a new bank account.</li>
+      <li><span class="n">8</span>Google Play listing, “Stable Money: FDs &amp; Bonds.” Product scope including the FD-backed card, the KBC association, and Stable Bonds via Stable Broking Private Limited, a SEBI-registered stock broker at stablebonds.in.</li>
+    </ol>
+    <div class="card" style="margin-top:14px;">
+      <p>Rates, user counts and rupee counters change. Where two sources disagree, this case keeps both and labels the date — it does not average them. The 0.6% margin, the FY25 accounts and the cap table are as reported by press, not as re-audited here. This document is an independent strategy case for study. It is not an offer, a rating, or a recommendation to invest in the company or in any deposit or bond.</p>
+    </div>
+    <div class="foot"><span><b>Stable Money</b> · Sources · October 2026</span><span>15</span></div>
+  </div>
+</section>
+
+</body>
+</html>
