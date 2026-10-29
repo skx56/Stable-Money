@@ -35,6 +35,7 @@
   @media print {
     html, body { background: #fff !important; padding: 0 !important; }
     .slide {
+      zoom: 1 !important;
       transform: none !important;
       margin: 0 !important;
       box-shadow: none !important;
@@ -1119,15 +1120,18 @@
 function fitSlides() {
   var slides = document.querySelectorAll(".slide");
   var natural = 11 * 96;
-  var scale = Math.min(1, (window.innerWidth - 36) / natural);
+  var scale = Math.min(1, (window.innerWidth - 28) / natural);
   for (var i = 0; i < slides.length; i++) {
-    slides[i].style.transform = "scale(" + scale + ")";
-    slides[i].style.marginBottom = (18 + (scale - 1) * 8.5 * 96) + "px";
+    slides[i].style.zoom = String(scale);
+    slides[i].style.transform = "none";
+    slides[i].style.marginBottom = "18px";
   }
+  document.documentElement.style.overflowX = "hidden";
 }
 window.addEventListener("resize", fitSlides);
 window.addEventListener("beforeprint", function () {
   document.querySelectorAll(".slide").forEach(function (s) {
+    s.style.zoom = "";
     s.style.transform = "";
     s.style.marginBottom = "";
   });
